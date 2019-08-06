@@ -1,7 +1,7 @@
 FROM openjdk:8-alpine
 MAINTAINER gremlinorm <https://github.com/gremlin-orm>
 
-ARG GREMLIN_VERSION=3.2.6
+ARG GREMLIN_VERSION=3.4.2
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -19,7 +19,7 @@ RUN apk add --update bash && rm -rf /var/cache/apk/* && \
 WORKDIR /gremlin-server/
 
 COPY ./grapeConfig.xml /root/.groovy/grapeConfig.xml
-RUN /bin/bash -c "/gremlin-server/bin/gremlin-server.sh -i org.apache.tinkerpop neo4j-gremlin $GREMLIN_VERSION"
+RUN /bin/bash -c "/gremlin-server/bin/gremlin-server.sh install org.apache.tinkerpop neo4j-gremlin $GREMLIN_VERSION"
 
 COPY ./conf/gremlin-server-custom.yml /gremlin-server/conf/gremlin-server-custom.yml
 COPY ./conf/neo4j.properties /gremlin-server/conf/neo4j.properties

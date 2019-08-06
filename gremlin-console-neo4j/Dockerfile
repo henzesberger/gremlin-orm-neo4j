@@ -1,7 +1,7 @@
 FROM openjdk:8-alpine
 MAINTAINER gremlinorm <https://github.com/gremlin-orm>
 
-ARG GREMLIN_VERSION=3.2.6
+ARG GREMLIN_VERSION=3.4.2
 
 ARG BUILD_DATE
 ARG VCS_REF

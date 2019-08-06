@@ -35,7 +35,7 @@ services:
       - ./gremlin-server-neo4j/scripts/neo4j.groovy:/gremlin-server/scripts/neo4j.groovy    
 
   neo4j-server:
-    image: neo4j:2.3
+    image: neo4j:3.5.8
     environment:
       # - NEO4J_AUTH=neo4j/pass
       - NEO4J_AUTH=none
